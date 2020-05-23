@@ -18,6 +18,8 @@ async def on_ready():
     print(time.strftime('%Y-%m-%d', time.localtime(time.time())))
     print("===========")
 
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("/명령어를 입력하세요"))
+
 
 # 봇에 메시지가 오면 수행 될 액션
 @client.event
@@ -53,7 +55,7 @@ async def on_message(message):
             channel.send("외부인은 사용이 불가능합니다")
             return None
 
-        score_file = open("C:\\Users\\yju08\\OneDrive\\동기화폴더\\서버용폴더\\YJUDEVBOT\\score\\{}".format(name),encoding="utf-8")
+        score_file = open("C:\\Users\\yju08\\OneDrive\\동기화폴더\\서버용폴더\\YJUDEVBOT\\score\\{}.txt".format(name),encoding="utf-8")
         score = score_file.read()
         score_file.close()
 
@@ -72,7 +74,7 @@ async def on_message(message):
             channel.send("외부인은 사용이 불가능합니다")
             return None
 
-        score_file = open("C:\\Users\\yju08\\OneDrive\\동기화폴더\\서버용폴더\\YJUDEVBOT\\score\\{}".format(name),encoding="utf-8")
+        score_file = open("C:\\Users\\yju08\\OneDrive\\동기화폴더\\서버용폴더\\YJUDEVBOT\\score\\{}.txt".format(name),encoding="utf-8")
         score = score_file.read()
         score_file.close()
 
